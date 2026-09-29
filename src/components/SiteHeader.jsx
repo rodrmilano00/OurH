@@ -109,7 +109,7 @@ export default function SiteHeader({
             id="prev-month"
             type="button"
             aria-label="Mes anterior"
-            disabled={view !== "month" || active === 0}
+            disabled={!months.length || (view === "month" && active === 0)}
             onClick={() =>
               view === "month" ? onSelectMonth(active - 1) : onSelectMonth(0)
             }
@@ -171,7 +171,9 @@ export default function SiteHeader({
             id="next-month"
             type="button"
             aria-label="Mes siguiente"
-            disabled={view !== "month" || active === months.length - 1}
+            disabled={
+              !months.length || (view === "month" && active === months.length - 1)
+            }
             onClick={() =>
               view === "month"
                 ? onSelectMonth(active + 1)

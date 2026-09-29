@@ -21,7 +21,7 @@ const SCRAPBOOK = {
       'Un archivo que crece con nosotros: un capítulo, una carta y una leyenda por foto de cada mes que llevamos juntos.',
 
     // ↓↓↓  CAMBIA ESTA FECHA (AAAA-MM-DD). El contador y los candados se recalculan solos ↓↓↓
-    startDate: '2026-04-14',
+    startDate: '2026-08-30',
 
     // Si quieres una fecha exacta para un capítulo, déjala escrita: date: '2026-04-14'.
     // Si la borras, se calcula sola: startDate + (number - 1) meses.
