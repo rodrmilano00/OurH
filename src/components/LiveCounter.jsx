@@ -37,7 +37,7 @@ export default function LiveCounter({ together, elapsed, startLabel }) {
         </div>
       </dl>
       <p className="counter__foot mono" id="counter-foot">
-        Contando desde el {startLabel}
+        Desde el {startLabel}, y sumando
       </p>
     </div>
   );

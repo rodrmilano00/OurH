@@ -15,10 +15,10 @@
 
 const SCRAPBOOK = {
   meta: {
-    title: 'Nuestra Historia',
+    title: 'Our Scrapbook',
     subtitle: 'Mes a mes',
     lede:
-      'Un archivo que crece con nosotros: un capítulo, una carta y una leyenda por foto de cada mes que llevamos juntos.',
+      'Un archivo que crece con nosotros: cada mes guarda una carta, unas fotos y una leyenda, para que ningún recuerdo se quede sin sitio.',
 
     // ↓↓↓  CAMBIA ESTA FECHA (AAAA-MM-DD). El contador y los candados se recalculan solos ↓↓↓
     startDate: '2026-08-30',

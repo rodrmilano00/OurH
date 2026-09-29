@@ -1,7 +1,7 @@
-# Nuestra Historia · Mes a Mes
+# Our Scrapbook · Mes a Mes
 
-Scrapbook de aniversarios mensuales: un capítulo, una carta y una leyenda por
-foto que se abre solo cada mes. React 19 + Vite.
+Un scrapbook que crece mes a mes: un capítulo, una carta y una leyenda por
+foto que se abre solo cuando llega su fecha. React 19 + Vite.
 
 ## Desarrollo
 

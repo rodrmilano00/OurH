@@ -1,4 +1,3 @@
-import { pad } from "../utils/dates.js";
 import { META } from "../model.js";
 import { IconArrowRight } from "./icons.jsx";
 import LiveCounter from "./LiveCounter.jsx";
@@ -30,7 +29,7 @@ export default function Hero({
 
         <p className="legend-line">
           “Cada mes tiene su capítulo, su carta y su leyenda. Y el siguiente se
-          abre solo.”
+          abre solo, cuando le toca, igual que llegaste tú.”
         </p>
         <p className="lede" id="hero-lede">
           {META.lede || ""}
@@ -39,14 +38,14 @@ export default function Hero({
         <div className="hero__cta">
           {lastOpen && (
             <a className="cta" href={`#mes-${lastOpen.number}`} id="cta-last">
-              <span>Volver al mes {pad(lastOpen.number)}</span>
+              <span>Volver a nuestro último capítulo</span>
               <IconArrowRight />
             </a>
           )}
           <p className="hero__note mono" id="hero-note">
             {openCount}{" "}
             {openCount === 1 ? "capítulo abierto" : "capítulos abiertos"}
-            {pendingCount > 0 ? ` · ${pendingCount} por escribir` : ""}
+            {pendingCount > 0 ? ` · ${pendingCount} por llegar` : ""}
           </p>
         </div>
       </div>

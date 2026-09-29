@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { pad, shortDate } from "../utils/dates.js";
-import { LOCALE } from "../model.js";
+import { LOCALE, META } from "../model.js";
 import { HeartMark, IconArrowLeft, IconArrowRight } from "./icons.jsx";
 
 export default function SiteHeader({
@@ -93,7 +93,7 @@ export default function SiteHeader({
           <a className="brand" href="#inicio" id="brand-home">
             <HeartMark className="brand__mark" />
             <span className="brand__text">
-              <span className="brand__name">Nuestra Historia</span>
+              <span className="brand__name">{META.title}</span>
             </span>
           </a>
 
