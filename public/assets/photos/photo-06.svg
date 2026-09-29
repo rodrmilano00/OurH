@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='900' height='1200' viewBox='0 0 900 1200'>
+  <rect width='900' height='1200' fill='#fbfaf7'/>
+  <rect x='40' y='40' width='820' height='1120' fill='none' stroke='#d3ccbe' stroke-width='2'/>
+  <rect x='60' y='60' width='780' height='1080' fill='none' stroke='#d3ccbe'/>
+  <circle cx='450' cy='430' r='150' fill='#e4dfd5' opacity='0.45'/>
+  <path d='M450 470C405 440 385 415 385 388a35 35 0 0 1 65-19 35 35 0 0 1 65 19c0 27-20 52-65 82Z' fill='#3f5340'/>
+  <text x='450' y='720' text-anchor='middle' font-family='Georgia, serif' font-size='150' fill='#3f5340' opacity='0.85'>06</text>
+  <text x='450' y='790' text-anchor='middle' font-family='monospace' font-size='24' letter-spacing='6' fill='#3f5340' opacity='0.55'>FOTO PENDIENTE</text>
+</svg>
