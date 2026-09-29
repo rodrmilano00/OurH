@@ -6,9 +6,8 @@ export default function Gallery({ month, fill, onOpenPhoto }) {
       <div className="gallery__grid">
         {!count ? (
           <p className="gallery__empty">
-            Este mes todavía no tiene fotos. Cuando las añadas en{" "}
-            <code>src/data.js</code>, dentro de <code>photos</code>, aparecerán
-            aquí con su leyenda.
+            Este mes todavía no tiene fotos. Cuando lleguen, aparecerán aquí
+            con su leyenda.
           </p>
         ) : (
           month.photos.map((photo, i) => {

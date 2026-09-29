@@ -2,13 +2,23 @@ import { pad } from "../utils/dates.js";
 import { LOCALE } from "../model.js";
 
 export default function LiveCounter({ together, elapsed, startLabel }) {
+  const bigValue = together > 0 ? together : elapsed.days;
+  const unit =
+    together > 0
+      ? together === 1
+        ? "mes juntos"
+        : "meses juntos"
+      : elapsed.days === 1
+        ? "día juntos"
+        : "días juntos";
+
   return (
     <div className="counter" aria-label="Tiempo juntos">
       <p className="counter__lead od-nowrap">
         <span className="counter__big" id="live-months">
-          {together}
+          {bigValue}
         </span>
-        <span className="counter__unit">meses juntos</span>
+        <span className="counter__unit">{unit}</span>
       </p>
       <dl className="counter__tiles">
         <div className="od-stat counter__tile">

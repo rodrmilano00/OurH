@@ -28,6 +28,7 @@ Edita `src/data.js` y añade un objeto más al array `months`:
 ```
 
 - `meta.startDate` (formato `AAAA-MM-DD`) controla el contador y los candados.
+- `locked: true` en un mes lo mantiene cerrado con "?" hasta que lo quites.
 - Si un mes no lleva `date`, su fecha se calcula como `startDate + (number - 1)` meses.
 - Las fotos viven en `public/assets/photos/`.
 - Un capítulo bloqueado muestra cuenta atrás y se desbloquea solo al llegar su fecha.

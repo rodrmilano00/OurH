@@ -1,18 +1,10 @@
 import { pad } from "../utils/dates.js";
 import Countdown from "./Countdown.jsx";
 
-export default function NextUp({ next, now }) {
+export default function NextUp({ next, pendingManual, now }) {
   return (
     <section className="nextup" id="nextup" aria-label="Próximo capítulo">
-      {!next ? (
-        <div className="nextup__row">
-          <p className="nextup__label mono">Todo al día</p>
-          <p className="nextup__lead">
-            No queda ningún capítulo por abrir. Cuando escribas el siguiente en{" "}
-            <code>src/data.js</code>, su cuenta atrás volverá a aparecer aquí.
-          </p>
-        </div>
-      ) : (
+      {next ? (
         <div className="nextup__row">
           <div className="nextup__copy">
             <p className="nextup__label mono">Lo próximo que viene</p>
@@ -23,6 +15,23 @@ export default function NextUp({ next, now }) {
             </p>
           </div>
           <Countdown prefix="nextup" target={next.date} now={now} />
+        </div>
+      ) : pendingManual > 0 ? (
+        <div className="nextup__row">
+          <p className="nextup__label mono">En camino</p>
+          <p className="nextup__lead">
+            Quedan {pendingManual}{" "}
+            {pendingManual === 1 ? "capítulo" : "capítulos"} por escribir. Se
+            irán abriendo solos cuando llegue su momento.
+          </p>
+        </div>
+      ) : (
+        <div className="nextup__row">
+          <p className="nextup__label mono">Todo al día</p>
+          <p className="nextup__lead">
+            No queda ningún capítulo por abrir. Cuando escribas el siguiente,
+            su cuenta atrás volverá a aparecer aquí.
+          </p>
         </div>
       )}
     </section>

@@ -11,6 +11,7 @@ export default function HomeView({
   elapsed,
   openMonths,
   nextLocked,
+  pendingManual,
   now,
   view,
   active,
@@ -26,10 +27,9 @@ export default function HomeView({
       {!months.length ? (
         <div className="wrap">
           <div className="gallery__empty">
-            <strong>El archivo está vacío.</strong>
+            <strong>Todavía no hay ningún capítulo.</strong>
             <span>
-              Añade el primer objeto al array <code>months</code> de{" "}
-              <code>src/data.js</code> y la portada se llenará sola.
+              Cuando se escriba el primero, esta portada se llenará sola.
             </span>
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function HomeView({
           </div>
 
           <div className="wrap">
-            <NextUp next={nextLocked} now={now} />
+            <NextUp next={nextLocked} pendingManual={pendingManual} now={now} />
           </div>
 
           <div className="wrap">

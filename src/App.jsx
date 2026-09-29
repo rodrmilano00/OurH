@@ -27,11 +27,17 @@ function Scrapbook() {
 
   const todayMs = startOfDay(new Date(now));
   const months = useMemo(
-    () => MONTHS.map((m) => ({ ...m, unlocked: todayMs >= m.unlockAt })),
+    () =>
+      MONTHS.map((m) => ({
+        ...m,
+        unlocked: !m.manualLock && todayMs >= m.unlockAt,
+      })),
     [todayMs]
   );
   const openMonths = months.filter((m) => m.unlocked);
-  const nextLocked = months.find((m) => !m.unlocked) || null;
+  const nextLocked =
+    months.find((m) => !m.unlocked && !m.manualLock) || null;
+  const pendingManual = months.filter((m) => m.manualLock).length;
 
   const together = monthsBetween(START, new Date(now));
   const elapsed = split(now - START.getTime());
@@ -64,9 +70,11 @@ function Scrapbook() {
         setView("month");
         setActive(index);
         setAnnounce(
-          startOfDay(new Date()) >= month.unlockAt
-            ? `Mes ${month.number}: ${month.title}`
-            : `Mes ${month.number}, bloqueado hasta el ${month.dateLabel}`
+          month.manualLock
+            ? `Mes ${month.number}, pendiente de escribir`
+            : startOfDay(new Date()) >= month.unlockAt
+              ? `Mes ${month.number}: ${month.title}`
+              : `Mes ${month.number}, bloqueado hasta el ${month.dateLabel}`
         );
       } else {
         setView("home");
@@ -98,7 +106,13 @@ function Scrapbook() {
 
   const goMonth = useCallback((index) => {
     const target = MONTHS[Math.max(0, Math.min(MONTHS.length - 1, index))];
-    if (!target) return;
+    if (
+      !target ||
+      target.manualLock ||
+      startOfDay(new Date()) < target.unlockAt
+    ) {
+      return;
+    }
     window.location.hash = `#mes-${target.number}`;
   }, []);
 
@@ -107,7 +121,7 @@ function Scrapbook() {
   const openBox = useCallback((monthIndex, photoIndex, opener) => {
     const month = MONTHS[monthIndex];
     if (!month || !month.photos.length) return;
-    if (startOfDay(new Date()) < month.unlockAt) return;
+    if (month.manualLock || startOfDay(new Date()) < month.unlockAt) return;
     setBox({ monthIndex, photoIndex, opener });
   }, []);
 
@@ -156,6 +170,7 @@ function Scrapbook() {
           elapsed={elapsed}
           openMonths={openMonths}
           nextLocked={nextLocked}
+          pendingManual={pendingManual}
           now={now}
           view={view}
           active={active}
@@ -192,9 +207,8 @@ function DataError() {
     <main id="view-main">
       <div className="wrap">
         <p className="noscript">
-          No se ha podido leer <code>src/data.js</code>. Comprueba que el
-          archivo existe y que exporta un objeto con <code>meta</code> y{" "}
-          <code>months</code>.
+          No se ha podido cargar el contenido. Vuelve a intentarlo en unos
+          minutos.
         </p>
       </div>
     </main>

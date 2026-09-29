@@ -7,6 +7,10 @@
    ni app.js: la cabecera, la home, la ficha y el índice se
    reconstruyen solos.
 
+   CANDADO MANUAL: pon  locked: true  en un mes para mantenerlo
+   cerrado con "?" hasta que lo escribas. Quita la línea cuando
+   esté listo: se abrirá solo si ya llegó su fecha.
+
    TOKENS disponibles dentro de "letter" y de las leyendas:
      {n}      → número de mes        (ej.: 3)
      {fecha}  → fecha del capítulo   (ej.: 14 de mayo de 2026)
@@ -64,6 +68,7 @@ Aquí empieza el primer capítulo. Gracias por estar.`,
 
     {
       number: 2,
+      locked: true,
       title: 'El mes en que dejó de ser raro',
       place: 'Rutina nueva',
       letter: `Este mes descubrimos que juntos se construye una rutina muy concreta: un café a la misma hora, un mensaje que no significa nada y que los dos releemos igual, y una serie que vemos a la vez.
@@ -90,6 +95,7 @@ Empezamos a decir "el mes que viene" sin que sonara a despedida. Y eso, para mí
 
     {
       number: 3,
+      locked: true,
       title: 'El mes de improvisar',
       place: 'Viaje corto',
       letter: `Nos alejamos un poco de casa, que fue exactamente lo que necesitábamos.
@@ -116,6 +122,7 @@ Volvimos con más fotos de las previstas y con la certeza de que podemos con cua
 
     {
       number: 4,
+      locked: true,
       title: 'El mes que se nos fue de las manos',
       place: 'Casa',
       letter: `Se juntaron tres semanas de trabajo, la mudanza a medias y un cumpleaños que acabamos celebrando dos días tarde, en un bar, con la misma gente. No se rompió nada, pero estábamos demasiado ocupados para notar cómo se fue el mes.
@@ -137,6 +144,7 @@ La foto del final es del domingo en que por fin paramos. La elegí como cierre p
 
     {
       number: 5,
+      locked: true,
       title: 'El mes en que empezó a ser costumbre',
       place: 'Casa',
       letter: `Ya no contamos las cosas buenas porque han dejado de ser excepciones: el domingo sin móvil, los desayunos largos, la serie compartida.
@@ -168,6 +176,7 @@ Llevamos {meses} meses y este es el primero en el que no eché de menos nada de 
 
     {
       number: 6,
+      locked: true,
       title: 'Medio año',
       place: 'El sitio de siempre',
       letter: `Seis meses. Es la primera vez que el número me para en seco al leerlo, porque hasta ahora me parecía una cifra de calendario y hoy ya es una distancia real.
@@ -194,6 +203,7 @@ He puesto la fecha a propósito: {fecha}. Quiero que dentro de un año aparezca 
 
     {
       number: 7,
+      locked: true,
       title: 'El mes que viene',
       place: 'Por decidir',
       letter: `Este capítulo todavía no está escrito. Se abrirá solo el {fecha}, y para entonces lo voy a escribir de verdad y no deprisa.`,
@@ -208,9 +218,46 @@ He puesto la fecha a propósito: {fecha}. Quiero que dentro de un año aparezca 
 
     {
       number: 8,
+      locked: true,
       title: 'Un mes sin fotos, a propósito',
       place: 'Por decidir',
       letter: `Este capítulo no tiene galería todavía. Cuando lo escribas, añade las fotos en el array "photos" y aparecerán solas.`,
+      photos: [],
+    },
+
+    {
+      number: 9,
+      locked: true,
+      title: 'Capítulo por escribir',
+      place: 'Por decidir',
+      letter: `Este capítulo todavía no está escrito.`,
+      photos: [],
+    },
+
+    {
+      number: 10,
+      locked: true,
+      title: 'Capítulo por escribir',
+      place: 'Por decidir',
+      letter: `Este capítulo todavía no está escrito.`,
+      photos: [],
+    },
+
+    {
+      number: 11,
+      locked: true,
+      title: 'Capítulo por escribir',
+      place: 'Por decidir',
+      letter: `Este capítulo todavía no está escrito.`,
+      photos: [],
+    },
+
+    {
+      number: 12,
+      locked: true,
+      title: 'Capítulo por escribir',
+      place: 'Por decidir',
+      letter: `Este capítulo todavía no está escrito.`,
       photos: [],
     },
   ],

@@ -10,7 +10,8 @@ function ChapterRow({ month, current, onSelect }) {
         type="button"
         data-index={month.index}
         aria-current={current ? "true" : "false"}
-        onClick={() => onSelect(month.index)}
+        aria-disabled={month.unlocked ? undefined : "true"}
+        onClick={() => month.unlocked && onSelect(month.index)}
       >
         <span className="chapter__num od-nowrap">{pad(month.number)}</span>
         <span className="chapter__meta">
@@ -20,7 +21,9 @@ function ChapterRow({ month, current, onSelect }) {
           <span className="chapter__date od-truncate">
             {month.unlocked
               ? month.dateLabel
-              : `se abre el ${shortDate(month.date, LOCALE)}`}
+              : month.manualLock
+                ? "?"
+                : `se abre el ${shortDate(month.date, LOCALE)}`}
           </span>
         </span>
         <span className="chapter__mark" aria-hidden="true">

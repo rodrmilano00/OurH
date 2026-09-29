@@ -78,7 +78,7 @@ export default function MonthView({
                       className="ghostbtn"
                       type="button"
                       id="card-prev"
-                      disabled={!prev}
+                      disabled={!prev || !prev.unlocked}
                       onClick={() => prev && onSelectMonth(prev.index)}
                     >
                       <IconArrowLeft />
@@ -90,7 +90,7 @@ export default function MonthView({
                       className="ghostbtn"
                       type="button"
                       id="card-next"
-                      disabled={!next}
+                      disabled={!next || !next.unlocked}
                       onClick={() => next && onSelectMonth(next.index)}
                     >
                       <span>
@@ -106,11 +106,20 @@ export default function MonthView({
                 <MonthMasthead month={shownMonth} locked />
                 <div className="month__rule" aria-hidden="true"></div>
                 <div className="locked">
-                  <Countdown
-                    prefix="locked"
-                    target={shownMonth.date}
-                    now={now}
-                  />
+                  {shownMonth.manualLock ? (
+                    <div className="locked__cd">
+                      <div className="cd">
+                        <span className="cd__num">?</span>
+                        <span className="cd__key">por escribir</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <Countdown
+                      prefix="locked"
+                      target={shownMonth.date}
+                      now={now}
+                    />
+                  )}
                   <a className="ghostbtn" href="#inicio">
                     <IconArrowLeft />
                     <span>Volver al inicio</span>

@@ -80,11 +80,17 @@ export default function SiteHeader({
 
     if (to < 0) {
       if (window.location.hash !== "#inicio") window.location.hash = "#inicio";
-    } else {
+    } else if (months[to]?.unlocked) {
       onSelectMonth(to);
     }
     chip?.focus();
   }
+
+  const firstOpen = months.findIndex((m) => m.unlocked);
+  const lastOpen = months.reduce(
+    (acc, m, i) => (m.unlocked ? i : acc),
+    -1
+  );
 
   return (
     <header className="site" id="site-header" ref={headerRef}>
@@ -98,7 +104,12 @@ export default function SiteHeader({
           </a>
 
           <p className="site__readout mono" id="site-readout">
-            <span id="readout-months">{together}</span> meses ·{" "}
+            {together > 0 && (
+              <>
+                <span id="readout-months">{together}</span>{" "}
+                {together === 1 ? "mes" : "meses"} ·{" "}
+              </>
+            )}
             <span id="readout-days">{daysLabel}</span> días
           </p>
         </div>
@@ -109,9 +120,15 @@ export default function SiteHeader({
             id="prev-month"
             type="button"
             aria-label="Mes anterior"
-            disabled={!months.length || (view === "month" && active === 0)}
+            disabled={
+              firstOpen < 0 ||
+              (view === "month" &&
+                (active === 0 || !months[active - 1].unlocked))
+            }
             onClick={() =>
-              view === "month" ? onSelectMonth(active - 1) : onSelectMonth(0)
+              view === "month"
+                ? onSelectMonth(active - 1)
+                : onSelectMonth(firstOpen)
             }
           >
             <IconArrowLeft />
@@ -149,17 +166,22 @@ export default function SiteHeader({
                     `Mes ${month.number}` +
                     (month.unlocked
                       ? ", abierto"
-                      : `, bloqueado hasta el ${month.dateLabel}`)
+                      : month.manualLock
+                        ? ", pendiente de escribir"
+                        : `, bloqueado hasta el ${month.dateLabel}`)
                   }
                   aria-current={isActive ? "true" : "false"}
+                  aria-disabled={month.unlocked ? undefined : "true"}
                   tabIndex={isActive || (view === "home" && i === 0) ? 0 : -1}
-                  onClick={() => onSelectMonth(month.index)}
+                  onClick={() => month.unlocked && onSelectMonth(month.index)}
                 >
                   <span className="chip__num">{pad(month.number)}</span>
                   <span className="chip__label od-truncate">
                     {month.unlocked
                       ? month.title
-                      : `se abre el ${shortDate(month.date, LOCALE)}`}
+                      : month.manualLock
+                        ? "?"
+                        : `se abre el ${shortDate(month.date, LOCALE)}`}
                   </span>
                 </button>
               );
@@ -172,12 +194,15 @@ export default function SiteHeader({
             type="button"
             aria-label="Mes siguiente"
             disabled={
-              !months.length || (view === "month" && active === months.length - 1)
+              lastOpen < 0 ||
+              (view === "month" &&
+                (active === months.length - 1 ||
+                  !months[active + 1].unlocked))
             }
             onClick={() =>
               view === "month"
                 ? onSelectMonth(active + 1)
-                : onSelectMonth(months.length - 1)
+                : onSelectMonth(lastOpen)
             }
           >
             <IconArrowRight />

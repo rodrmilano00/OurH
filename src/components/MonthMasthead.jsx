@@ -11,8 +11,17 @@ export default function MonthMasthead({ month, locked }) {
         </h2>
         {locked ? (
           <p className="masthead__date">
-            Abre el <span className="od-nowrap">{month.dateLabel}</span>. Hasta
-            entonces no se ve ni la carta ni las fotos.
+            {month.manualLock ? (
+              <>
+                Este capítulo todavía no está escrito. Se abrirá cuando llegue
+                su momento.
+              </>
+            ) : (
+              <>
+                Abre el <span className="od-nowrap">{month.dateLabel}</span>.
+                Hasta entonces no se ve ni la carta ni las fotos.
+              </>
+            )}
           </p>
         ) : (
           <p className="masthead__date">

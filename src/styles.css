@@ -34,8 +34,8 @@
   /* data text only — authored copy is rewritten to its budget instead */
   .od-truncate { display: block; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   .od-clamp-2, .od-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
-  .od-clamp-2 { -webkit-line-clamp: 2; }
-  .od-clamp-3 { -webkit-line-clamp: 3; }
+  .od-clamp-2 { -webkit-line-clamp: 2; line-clamp: 2; }
+  .od-clamp-3 { -webkit-line-clamp: 3; line-clamp: 3; }
   .od-lines-2 { min-height: calc(2 * 1.4em); }   /* block-level reservation for a shared baseline */
   .od-nowrap  { white-space: nowrap; }           /* 数字+单位 · 价格+起 · 日期+星期 */
   .od-keep    { word-break: keep-all; overflow-wrap: anywhere; } /* CJK labels break at spaces / <wbr> first */
@@ -319,9 +319,11 @@ code {
 
 .brand__name {
   display: block;
+  font-family: var(--font-display);
   font-size: var(--fs-small);
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
   color: var(--ink);
 }
 
@@ -887,6 +889,7 @@ code {
 .letter__body.is-clamped {
   display: -webkit-box;
   -webkit-line-clamp: 7;
+  line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1340,5 +1343,28 @@ code {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* -------------------------------------------------------------
+   12. Elementos bloqueados: inertes hasta que se escriben
+   ------------------------------------------------------------- */
+.chip[aria-disabled="true"],
+.chapter[aria-disabled="true"] {
+  cursor: default;
+}
+
+@media (hover: hover) {
+  .chip[aria-disabled="true"]:hover {
+    color: var(--ink-3);
+  }
+  .chip[aria-disabled="true"]:hover .chip__num {
+    color: var(--ink-4);
+  }
+  .chapter[aria-disabled="true"]:hover {
+    padding-inline: 0;
+  }
+  .chapter[aria-disabled="true"]:hover .chapter__num {
+    color: var(--ink-4);
   }
 }
