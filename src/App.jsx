@@ -71,7 +71,7 @@ function Scrapbook() {
         setActive(index);
         setAnnounce(
           month.manualLock
-            ? `Mes ${month.number}, pendiente de escribir`
+            ? `Mes ${month.number}, por abrir`
             : startOfDay(new Date()) >= month.unlockAt
               ? `Mes ${month.number}: ${month.title}`
               : `Mes ${month.number}, bloqueado hasta el ${month.dateLabel}`

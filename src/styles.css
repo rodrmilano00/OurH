@@ -1031,6 +1031,34 @@ code {
   background-color: var(--ink-3);
 }
 
+/* Botón de play sobre la funda: invita al toque y se desvanece al sonar */
+.player__hint {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 41%;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  background-color: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--t-fast) var(--ease);
+}
+
+.player__hint svg {
+  width: 18px;
+  height: 18px;
+  margin-left: 2px;
+}
+
+.player.is-active .player__hint {
+  opacity: 0;
+}
+
 .player__track {
   margin: 0;
   min-width: 0;
@@ -1688,6 +1716,11 @@ code {
   box-shadow: inset 0 0 0 2px #000, 0 0 0 1px #2a2a2a;
 }
 
+.month--sting .player__hint {
+  border: 1px solid var(--sting-red);
+  box-shadow: 0 0 0 2px #000, 3px 3px 0 #000;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .month--sting .player__vinyl:hover .player__disc {
     transform: translateX(24%);
@@ -2002,4 +2035,79 @@ body[data-theme="sting"] .foot__line {
 
 body[data-theme="sting"] .foot__hint {
   color: #7a7a7a;
+}
+
+/* Sting en móvil: el masthead se apila — placa TRACK y vinilo comparten
+   fila arriba, y el título respira a ancho completo debajo */
+@media (max-width: 767px) {
+  .month--sting .masthead {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--sp-6);
+  }
+
+  .month--sting .masthead__side {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: var(--sp-5);
+    width: 100%;
+  }
+
+  .month--sting .masthead__num {
+    justify-self: start;
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .month--sting .masthead__title {
+    font-size: clamp(2.4rem, 1.6rem + 4vw, 3.4rem);
+    max-width: 16ch;
+  }
+
+  .month--sting .masthead__song {
+    padding: 5px 10px;
+    letter-spacing: 0.14em;
+    transform: skewX(-5deg);
+  }
+
+  /* En móvil el vinilo es el protagonista: más grande, centrado, y el
+     disco "respira" fuera de la funda para invitar al toque (no hay hover) */
+  .month--sting .masthead__side .player {
+    align-items: center;
+  }
+
+  .month--sting .player__vinyl {
+    width: clamp(160px, 52vw, 210px);
+  }
+
+  .month--sting .player__cover {
+    box-shadow: 5px 5px 0 #000, 0 0 0 1px #3a3a3a;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (max-width: 767px) {
+  .month--sting .player:not(.is-playing) .player__disc {
+    animation: vinyl-nudge 3s var(--ease) infinite;
+  }
+}
+
+@keyframes vinyl-nudge {
+  0%,
+  55%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(24%);
+  }
+}
+
+@media (max-width: 479px) {
+  /* El display gigante no debe rebosar con títulos de una palabra larga */
+  .display {
+    font-size: clamp(2.5rem, 13vw, 3.6rem);
+  }
+
+  .month--sting {
+    padding: var(--sp-5);
+  }
 }

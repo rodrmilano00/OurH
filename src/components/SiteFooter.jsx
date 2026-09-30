@@ -4,11 +4,11 @@ export default function SiteFooter({ startLabel }) {
       <div className="wrap foot__inner">
         <p className="foot__line">
           <span id="foot-date">
-            Capítulo a capítulo, desde el {startLabel}.
+            Disco a disco, desde el {startLabel}.
           </span>
         </p>
         <p className="foot__hint">
-          Hecho a mano, mes a mes, para que ningún recuerdo se quede sin sitio.
+          Una colección que se arma mes a mes, canción a canción.
         </p>
       </div>
     </footer>

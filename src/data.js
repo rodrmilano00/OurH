@@ -19,10 +19,10 @@
 
 const SCRAPBOOK = {
   meta: {
-    title: 'Our Scrapbook',
+    title: 'Our Turntable',
     subtitle: 'Mes a mes',
     lede:
-      'Un archivo que crece con nosotros: cada mes guarda una carta, unas fotos y una leyenda, para que ningún recuerdo se quede sin sitio.',
+      'Mes a mes vamos armando un tocadiscos: cada capítulo es un disco, y cada disco lleva una canción que nos marcó.',
 
     // ↓↓↓  CAMBIA ESTA FECHA (AAAA-MM-DD). El contador y los candados se recalculan solos ↓↓↓
     startDate: '2026-08-30',
@@ -166,14 +166,14 @@ La foto del final es del domingo en que por fin paramos. La elegí como cierre p
       locked: true,
       title: 'El mes en que empezó a ser costumbre',
       place: 'Casa',
-      letter: `Ya no contamos las cosas buenas porque han dejado de ser excepciones: el domingo sin móvil, los desayunos largos, la serie compartida.
+      letter: `Ya no contamos las cosas buenas porque han dejado de ser excepciones: el domingo sin celular, los desayunos largos, la serie compartida.
 
 Llevamos {meses} meses y este es el primero en el que no eché de menos nada de cómo era antes. No es que haya pasado algo grande: es que se ha ido aclimatando todo.`,
       photos: [
         {
           src: 'assets/photos/photo-06.svg',
           alt: 'Marcador de la primera foto del mes 5, pendiente de sustituir por vuestra imagen.',
-          caption: 'El domingo sin móvil',
+          caption: 'El domingo sin celular',
         },
         {
           src: 'assets/photos/photo-01.svg',

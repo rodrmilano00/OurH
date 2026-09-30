@@ -58,10 +58,11 @@ export default function SongPlayer({ song }) {
   }
 
   const playing = state === "playing";
+  const active = playing || state === "loading";
 
   return (
     <div
-      className={"player" + (playing ? " is-playing" : "")}
+      className={"player" + (playing ? " is-playing" : "") + (active ? " is-active" : "")}
       role="group"
       aria-label={`Reproducir ${song.title} de ${song.artist}`}
     >
@@ -86,6 +87,9 @@ export default function SongPlayer({ song }) {
             loading="lazy"
             decoding="async"
           />
+          <span className="player__hint" aria-hidden="true">
+            <IconPlay />
+          </span>
         </button>
       ) : (
         <button

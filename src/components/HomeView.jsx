@@ -27,9 +27,9 @@ export default function HomeView({
       {!months.length ? (
         <div className="wrap">
           <div className="gallery__empty">
-            <strong>Todavía no hay ningún capítulo.</strong>
+            <strong>Todavía no hay ningún disco.</strong>
             <span>
-              Cuando se escriba el primero, esta portada se llenará sola.
+              Cuando entre el primero, esta portada se llenará sola.
             </span>
           </div>
         </div>

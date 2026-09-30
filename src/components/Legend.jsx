@@ -1,9 +1,9 @@
 import { pad } from "../utils/dates.js";
 
 const LEGEND = [
-  "Cada mes empieza con una carta escrita para ti. Léela despacio: está pensada para ese momento, no para antes.",
-  "Cada foto guarda su leyenda: lo que pasó y lo que sentimos. Púlsala y se abre grande, con su pie.",
-  "Ningún capítulo se abre antes de tiempo. Cuando llega su fecha, el candado desaparece solo: lo bueno no se fuerza.",
+  "Cada mes añadimos un disco al tocadiscos: una canción que nos marcó y una carta escrita para ti. Léela despacio.",
+  "Cada foto es una pista de ese mes: lo que pasó y lo que sentimos. Tócala y se abre grande, con su pie.",
+  "Ningún disco suena antes de tiempo. Cuando llega su fecha, el candado desaparece solo: lo bueno no se fuerza.",
 ];
 
 export default function Legend() {

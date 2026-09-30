@@ -117,7 +117,7 @@ export default function MonthView({
                     <div className="locked__cd">
                       <div className="cd">
                         <span className="cd__num">?</span>
-                        <span className="cd__key">por escribir</span>
+                        <span className="cd__key">por abrir</span>
                       </div>
                     </div>
                   ) : (

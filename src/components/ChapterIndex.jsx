@@ -16,7 +16,7 @@ function ChapterRow({ month, current, onSelect }) {
         <span className="chapter__num od-nowrap">{pad(month.number)}</span>
         <span className="chapter__meta">
           <span className="chapter__title od-truncate">
-            {month.unlocked ? month.title : "Bloqueado"}
+            {month.unlocked ? month.title : "Por abrir"}
           </span>
           <span className="chapter__date od-truncate">
             {month.unlocked
@@ -36,9 +36,9 @@ function ChapterRow({ month, current, onSelect }) {
 
 export default function ChapterIndex({ months, openCount, view, active, onSelect }) {
   return (
-    <section className="index" aria-label="Índice de capítulos">
+    <section className="index" aria-label="Colección de discos">
       <p className="index__note mono" id="index-note">
-        {openCount} de {months.length} capítulos abiertos.
+        {openCount} de {months.length} discos en la colección.
       </p>
       <ul className="index__grid" id="index-grid">
         {months.map((month) => (

@@ -17,13 +17,14 @@ export default function MonthMasthead({ month, locked }) {
           <p className="masthead__date">
             {month.manualLock ? (
               <>
-                Este capítulo todavía no está escrito. Se abrirá cuando llegue
-                su momento.
+                Este disco todavía no está en el plato. Sonará cuando llegue
+                su mes.
               </>
             ) : (
               <>
-                Abre el <span className="od-nowrap">{month.dateLabel}</span>.
-                Hasta entonces no se ve ni la carta ni las fotos.
+                Llega al plato el{" "}
+                <span className="od-nowrap">{month.dateLabel}</span>. Hasta
+                entonces no se ve ni la carta ni las fotos.
               </>
             )}
           </p>

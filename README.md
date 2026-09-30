@@ -1,7 +1,8 @@
-# Our Scrapbook · Mes a Mes
+# Our Turntable · Mes a Mes
 
-Un scrapbook que crece mes a mes: un capítulo, una carta y una leyenda por
-foto que se abre solo cuando llega su fecha. React 19 + Vite.
+Un tocadiscos que se arma mes a mes: cada capítulo es un disco con una canción
+que nos marcó, una carta y sus fotos — y se abre solo cuando llega su fecha.
+React 19 + Vite.
 
 ## Desarrollo
 

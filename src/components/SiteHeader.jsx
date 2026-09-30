@@ -138,7 +138,7 @@ export default function SiteHeader({
             className="od-rail month-rail"
             id="month-rail"
             role="group"
-            aria-label="Inicio y meses del scrapbook, usa las flechas del teclado"
+            aria-label="Inicio y meses del tocadiscos, usa las flechas del teclado"
             ref={railRef}
             onKeyDown={onRailKeyDown}
           >
@@ -167,7 +167,7 @@ export default function SiteHeader({
                     (month.unlocked
                       ? ", abierto"
                       : month.manualLock
-                        ? ", pendiente de escribir"
+                        ? ", por abrir"
                         : `, bloqueado hasta el ${month.dateLabel}`)
                   }
                   aria-current={isActive ? "true" : "false"}

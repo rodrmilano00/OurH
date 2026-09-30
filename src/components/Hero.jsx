@@ -24,12 +24,13 @@ export default function Hero({
           </span>
         </h1>
         <p className="hero__meta mono" id="hero-kicker">
-          Desde el {startLabel}
+          Girando desde el {startLabel}
         </p>
 
         <p className="legend-line">
-          “Cada mes tiene su capítulo, su carta y su leyenda. Y el siguiente se
-          abre solo, cuando le toca, igual que llegaste tú.”
+          “Cada mes ponemos un disco nuevo: una canción que nos marcó, su carta
+          y sus fotos. La colección crece cuando le toca, igual que llegaste
+          tú.”
         </p>
         <p className="lede" id="hero-lede">
           {META.lede || ""}
@@ -38,13 +39,13 @@ export default function Hero({
         <div className="hero__cta">
           {lastOpen && (
             <a className="cta" href={`#mes-${lastOpen.number}`} id="cta-last">
-              <span>Volver a nuestro último capítulo</span>
+              <span>Poner el último disco</span>
               <IconArrowRight />
             </a>
           )}
           <p className="hero__note mono" id="hero-note">
             {openCount}{" "}
-            {openCount === 1 ? "capítulo abierto" : "capítulos abiertos"}
+            {openCount === 1 ? "disco en la colección" : "discos en la colección"}
             {pendingCount > 0 ? ` · ${pendingCount} por llegar` : ""}
           </p>
         </div>
