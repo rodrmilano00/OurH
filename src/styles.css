@@ -56,6 +56,15 @@
 }
 /* /OD-LAYOUT-PRIMITIVES v1 */
 
+/* Fuentes propias de temas de capítulo */
+@font-face {
+  font-family: "Lady Starlight";
+  src: url("/fonts/LadyStarlight.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 /* -------------------------------------------------------------
    1. Tokens
    ------------------------------------------------------------- */
@@ -1367,4 +1376,360 @@ code {
   .chapter[aria-disabled="true"]:hover .chapter__num {
     color: var(--ink-4);
   }
+}
+
+/* -------------------------------------------------------------
+   13. Temas por capítulo
+   ------------------------------------------------------------- */
+
+/* Crédito de la canción asociada al mes */
+.masthead__song {
+  margin: var(--sp-3) 0 0;
+  color: var(--ink-4);
+}
+
+/* theme: sting — Still Loving You · Love at First Sting (Scorpions, 1984).
+   Portada de Helmut Newton: noir glam-metal. Negro profundo, blanco puro,
+   filetes afilados, insignias metálicas, grano de película y acento carmesí. */
+.month-view--sting {
+  background-color: #050505;
+  background-image: radial-gradient(
+    ellipse 120% 55% at 50% -10%,
+    rgba(255, 255, 255, 0.09),
+    transparent 60%
+  );
+}
+
+.month--sting {
+  --sting-silver: #b5b5b5;
+  --sting-line: #2e2e2e;
+  --sting-red: #8b0000;
+  position: relative;
+  padding: clamp(var(--sp-6), 4vw, var(--sp-9));
+  background-color: #0c0c0c;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.016) 0 1px,
+    transparent 1px 3px
+  );
+  border: 1px solid var(--sting-line);
+  box-shadow: 0 0 0 1px #000, 0 24px 60px rgba(0, 0, 0, 0.55);
+  color: #f2f2f2;
+}
+
+.month--sting :focus-visible {
+  outline-color: #fff;
+}
+
+/* Masthead — placa de metal para el número, título en script blanca */
+.month--sting .masthead__num {
+  padding: 0.08em 0.28em;
+  font-style: italic;
+  color: #0a0a0a;
+  background: #d8d8d8;
+  box-shadow: 3px 3px 0 #000;
+  transform: skewX(-8deg);
+}
+
+.month--sting .masthead__num::before {
+  content: "TRACK\00A0";
+  font-size: 0.42em;
+  vertical-align: 0.28em;
+  letter-spacing: 0.12em;
+}
+
+.month--sting .masthead__title {
+  font-family: "Lady Starlight", "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 2rem + 4.6vw, 5.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  max-width: 14ch;
+  text-shadow: 0 0 26px rgba(255, 255, 255, 0.16), 2px 2px 0 #000;
+}
+
+.month--sting .masthead__date {
+  font-family: "Space Mono", var(--font-mono);
+  letter-spacing: 0.18em;
+  color: var(--sting-silver);
+}
+
+.month--sting .masthead__sep {
+  color: #565656;
+}
+
+.month--sting .masthead__mark {
+  color: #8f8f8f;
+}
+
+/* Crédito como placa metálica inclinada */
+.month--sting .masthead__song {
+  display: inline-block;
+  margin-top: var(--sp-4);
+  padding: 6px 14px;
+  font-family: var(--font-display);
+  font-size: var(--fs-micro);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: #d4d4d4;
+  box-shadow: 3px 3px 0 #000;
+  transform: skewX(-8deg);
+}
+
+.month--sting .month__rule {
+  height: 2px;
+  background-color: #fff;
+}
+
+/* Carta — liner notes de cassette: blanco sobre negro, lomo carmesí */
+.month--sting .letter {
+  max-width: none;
+  padding: clamp(var(--sp-5), 3.5vw, var(--sp-8));
+  background-color: #060606;
+  border: 1px solid var(--sting-line);
+  border-top: 3px solid var(--sting-red);
+  box-shadow: inset 0 0 48px rgba(0, 0, 0, 0.6);
+}
+
+.month--sting .letter::before {
+  content: "SIDE A · CARTA DEL MES";
+  display: block;
+  margin-bottom: var(--sp-5);
+  font-family: "Space Mono", var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a7a7a;
+}
+
+.month--sting .letter__mark {
+  color: var(--sting-red);
+}
+
+.month--sting .letter__body {
+  font-family: "Space Mono", var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #e8e8e8;
+}
+
+.month--sting .letter__more {
+  font-family: "Space Mono", var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #cfcfcf;
+  border-bottom-color: #3a3a3a;
+}
+
+@media (hover: hover) {
+  .month--sting .letter__more:hover {
+    color: #fff;
+    border-color: var(--sting-red);
+  }
+}
+
+/* Galería — copias de estudio B&W que revelan color al hover */
+.month--sting .gallery {
+  border-top: 2px solid #fff;
+}
+
+.month--sting .photo__img {
+  border: 1px solid #3a3a3a;
+  border-radius: 0;
+  filter: grayscale(1) contrast(1.18) brightness(0.96);
+  transition: filter var(--t-mid) var(--ease),
+    transform var(--t-mid) var(--ease);
+}
+
+@media (hover: hover) {
+  .month--sting .photo__btn:hover .photo__img {
+    filter: none;
+    transform: scale(1.025);
+  }
+}
+
+.month--sting .photo__cap {
+  font-family: "Space Mono", var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sting-silver);
+}
+
+.month--sting .gallery__count {
+  font-family: "Space Mono", var(--font-mono);
+  color: #7a7a7a;
+}
+
+.month--sting .gallery__empty {
+  font-family: "Space Mono", var(--font-mono);
+  font-size: 1rem;
+  color: #9a9a9a;
+}
+
+/* Pie de capítulo y navegación */
+.month--sting .chapter__foot {
+  border-top: 1px solid #3a3a3a;
+}
+
+.month--sting .ghostbtn {
+  font-family: "Space Mono", var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d6d6d6;
+}
+
+.month--sting .ghostbtn:disabled {
+  color: #4d4d4d;
+}
+
+@media (hover: hover) {
+  .month--sting .ghostbtn:not(:disabled):hover {
+    color: #fff;
+  }
+}
+
+/* Estado bloqueado dentro del tema */
+.month--sting .locked__cd {
+  border-left-color: var(--sting-line);
+}
+
+.month--sting .cd__num {
+  color: #fff;
+}
+
+.month--sting .cd__key {
+  color: #8a8a8a;
+}
+
+/* Lightbox a juego: scrim casi negro, copia en B&W con marco */
+.lightbox--sting .lightbox__scrim {
+  background-color: rgba(4, 4, 4, 0.96);
+}
+
+.lightbox--sting .lightbox__img {
+  border: 1px solid #3a3a3a;
+  border-radius: 0;
+  background-color: #000;
+  filter: grayscale(1) contrast(1.14);
+}
+
+.lightbox--sting .lightbox__caption {
+  font-family: "Space Mono", var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  color: #d9d9d9;
+}
+
+/* Marco global noir mientras el capítulo sting está abierto:
+   fondo de página, cabecera fija, rail de meses y pie. */
+body[data-theme="sting"] {
+  background-color: #050505;
+}
+
+body[data-theme="sting"] :focus-visible {
+  outline-color: #fff;
+}
+
+body[data-theme="sting"] .site {
+  background-color: #050505;
+  border-bottom-color: #2e2e2e;
+}
+
+body[data-theme="sting"] .brand,
+body[data-theme="sting"] .brand__name {
+  color: #f2f2f2;
+}
+
+body[data-theme="sting"] .brand__name {
+  font-family: "Lady Starlight", "Instrument Serif", serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+body[data-theme="sting"] .site__readout,
+body[data-theme="sting"] .chip,
+body[data-theme="sting"] .chip__num,
+body[data-theme="sting"] .chip__label {
+  font-style: italic;
+}
+
+body[data-theme="sting"] .site__readout {
+  color: #9a9a9a;
+}
+
+body[data-theme="sting"] .month-rail {
+  border-top-color: #2e2e2e;
+}
+
+body[data-theme="sting"] .railnav {
+  color: #cfcfcf;
+  border-color: #3a3a3a;
+}
+
+body[data-theme="sting"] .railnav:disabled {
+  color: #4d4d4d;
+  border-color: #262626;
+}
+
+@media (hover: hover) {
+  body[data-theme="sting"] .railnav:not(:disabled):hover {
+    color: #fff;
+    border-color: #8a8a8a;
+  }
+}
+
+body[data-theme="sting"] .chip {
+  color: #9a9a9a;
+}
+
+body[data-theme="sting"] .chip__num {
+  color: #7a7a7a;
+}
+
+body[data-theme="sting"] .chip[aria-current="true"] {
+  color: #fff;
+  border-bottom-color: #8b0000;
+}
+
+body[data-theme="sting"] .chip[aria-current="true"] .chip__num {
+  color: #fff;
+}
+
+body[data-theme="sting"] .chip--locked .chip__num,
+body[data-theme="sting"] .chip--locked .chip__label {
+  color: #4d4d4d;
+}
+
+body[data-theme="sting"] .chip--home {
+  border-right-color: #3a3a3a;
+}
+
+@media (hover: hover) {
+  body[data-theme="sting"] .chip:hover {
+    color: #e8e8e8;
+  }
+  body[data-theme="sting"] .chip:hover .chip__num {
+    color: #cfcfcf;
+  }
+}
+
+body[data-theme="sting"] .foot {
+  border-top-color: #2e2e2e;
+}
+
+body[data-theme="sting"] .foot__line {
+  color: #b5b5b5;
+}
+
+body[data-theme="sting"] .foot__hint {
+  color: #7a7a7a;
 }

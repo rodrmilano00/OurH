@@ -104,6 +104,15 @@ function Scrapbook() {
     document.body.setAttribute("data-view", view);
   }, [view]);
 
+  const activeTheme = view === "month" ? months[active]?.theme : null;
+  useEffect(() => {
+    if (activeTheme) {
+      document.body.setAttribute("data-theme", activeTheme);
+    } else {
+      document.body.removeAttribute("data-theme");
+    }
+  }, [activeTheme]);
+
   const goMonth = useCallback((index) => {
     const target = MONTHS[Math.max(0, Math.min(MONTHS.length - 1, index))];
     if (

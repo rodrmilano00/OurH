@@ -47,14 +47,21 @@ export default function MonthView({
 
   return (
     <section
-      className="view month-view"
+      className={
+        "view month-view" +
+        (shownMonth?.theme ? ` month-view--${shownMonth.theme}` : "")
+      }
       id="view-month"
       aria-labelledby="card-title"
       hidden={hidden}
     >
       <div className="wrap">
         <article
-          className={"month" + (swapping ? " is-out" : "")}
+          className={
+            "month" +
+            (shownMonth?.theme ? ` month--${shownMonth.theme}` : "") +
+            (swapping ? " is-out" : "")
+          }
           id="month-card"
           data-month={shown}
         >

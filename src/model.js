@@ -24,6 +24,8 @@ export const MONTHS = (DATA_OK ? SCRAPBOOK.months : [])
       title: m.title || "Capítulo sin título",
       place: m.place || "",
       letter: m.letter || "",
+      song: m.song || null,
+      theme: m.theme || null,
       manualLock: Boolean(m.locked),
       photos: Array.isArray(m.photos) ? m.photos : [],
       date,

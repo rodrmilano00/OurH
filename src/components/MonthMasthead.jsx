@@ -37,6 +37,12 @@ export default function MonthMasthead({ month, locked }) {
             )}
           </p>
         )}
+        {!locked && month.song && (
+          <p className="masthead__song mono">
+            {month.song.title} · {month.song.artist} · {month.song.album} (
+            {month.song.year})
+          </p>
+        )}
       </div>
       {locked && (
         <span className="masthead__mark" aria-hidden="true">

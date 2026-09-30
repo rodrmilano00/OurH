@@ -89,7 +89,11 @@ export default function Lightbox({
 
   return (
     <div
-      className={"lightbox" + (open ? " is-open" : "")}
+      className={
+        "lightbox" +
+        (open ? " is-open" : "") +
+        (month.theme ? ` lightbox--${month.theme}` : "")
+      }
       id="lightbox"
       role="dialog"
       aria-modal="true"

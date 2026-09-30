@@ -37,6 +37,13 @@ const SCRAPBOOK = {
       number: 1,
       title: 'El mes en que empezó todo',
       place: 'Primera cita',
+      theme: 'sting',
+      song: {
+        title: 'Still Loving You',
+        artist: 'Scorpions',
+        album: 'Love at First Sting',
+        year: 1984,
+      },
       letter: `Ese día no tenía ninguna importancia en el calendario y, sin embargo, lo he repasado tantas veces que ya me sé de memoria hasta la lluvia del camino de vuelta.
 
 Hablamos medio rato para no meter prisa y, cuando te despidiste en la puerta, tardé tres minutos en arrancar. Ese café no era el plan de nadie y acabó siendo el principio de esta página.
