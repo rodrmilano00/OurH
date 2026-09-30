@@ -44,6 +44,7 @@ const SCRAPBOOK = {
         album: 'Love at First Sting',
         year: 1984,
         cover: 'assets/covers/love-at-first-sting.jpg',
+        src: 'audio/still-loving-you.mp3',
       },
       letter: `Ese día no tenía ninguna importancia en el calendario y, sin embargo, lo he repasado tantas veces que ya me sé de memoria hasta la lluvia del camino de vuelta.
 

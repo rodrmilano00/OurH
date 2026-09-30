@@ -47,12 +47,16 @@ automáticamente en cada push a `main`. Para activarlo:
 `vite.config.js` ya lleva `base: "/OurH/"`. Si renombras el repo, cambia ahí el
 `base` para que las rutas sigan resolviendo.
 
-**Navidrome en la versión desplegada**: el streaming solo funciona con un
-servidor Navidrome alcanzable públicamente por HTTPS. Defínelo como secrets del
-repo (`Settings → Secrets and variables → Actions`):
-`VITE_NAVIDROME_URL`, `VITE_NAVIDROME_USER`, `VITE_NAVIDROME_PASS`. Sin secrets,
-la web desplegada funciona igual pero el reproductor no se muestra — el Navidrome
-local (`localhost:4533`) solo sirve en tu máquina.
+**Audio empaquetado**: si el `song` de un mes lleva `src` (ej.
+`src: 'audio/still-loving-you.mp3'` con el archivo en `public/audio/`), el
+reproductor usa ese archivo y funciona también en la versión desplegada — sin
+necesidad de Navidrome. Ten en cuenta que el repo es público: el audio queda
+descargable por cualquiera.
+
+**Navidrome en la versión desplegada**: para canciones sin `src` el streaming
+solo funciona con un servidor Navidrome alcanzable públicamente por HTTPS.
+Defínelo como secrets del repo (`Settings → Secrets and variables → Actions`):
+`VITE_NAVIDROME_URL`, `VITE_NAVIDROME_USER`, `VITE_NAVIDROME_PASS`.
 
 ## Streaming con Navidrome
 

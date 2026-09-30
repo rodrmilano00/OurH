@@ -29,7 +29,7 @@ export default function SongPlayer({ song }) {
     []
   );
 
-  if (!song || !NAVIDROME_READY) return null;
+  if (!song || (!song.src && !NAVIDROME_READY)) return null;
 
   async function toggle() {
     const audio = audioRef.current;
@@ -42,9 +42,14 @@ export default function SongPlayer({ song }) {
 
     try {
       if (!audio.src) {
-        setState("loading");
-        trackIdRef.current ??= await searchTrackId(song.title, song.artist);
-        audio.src = streamUrl(trackIdRef.current);
+        if (song.src) {
+          /* Archivo empaquetado en la web: suena también en el deploy */
+          audio.src = song.src;
+        } else {
+          setState("loading");
+          trackIdRef.current ??= await searchTrackId(song.title, song.artist);
+          audio.src = streamUrl(trackIdRef.current);
+        }
       }
       await audio.play();
     } catch {
