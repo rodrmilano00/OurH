@@ -67,6 +67,22 @@ export function IconChevron() {
   );
 }
 
+export function IconPlay() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M8 5.5v13l11-6.5Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function IconPause() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M7.5 5h3.4v14H7.5zM13.1 5h3.4v14h-3.4z" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function IconClose() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">

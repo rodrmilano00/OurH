@@ -32,10 +32,48 @@ Edita `src/data.js` y añade un objeto más al array `months`:
 - Si un mes no lleva `date`, su fecha se calcula como `startDate + (number - 1)` meses.
 - Las fotos viven en `public/assets/photos/`.
 - Un capítulo bloqueado muestra cuenta atrás y se desbloquea solo al llegar su fecha.
+- `theme: "nombre"` + `song: { title, artist, album, year }` tematizan el capítulo
+  (clases `.month--<tema>`, `.month-view--<tema>`, `.lightbox--<tema>`) y
+  habilitan el reproductor de la canción.
+
+## Despliegue (GitHub Pages)
+
+Hay un workflow en `.github/workflows/deploy.yml` que construye y publica
+automáticamente en cada push a `main`. Para activarlo:
+
+1. En GitHub: **Settings → Pages → Source → GitHub Actions**.
+2. `git push` a `main` — la página queda en `https://rodrmilano00.github.io/OurH/`.
+
+`vite.config.js` ya lleva `base: "/OurH/"`. Si renombras el repo, cambia ahí el
+`base` para que las rutas sigan resolviendo.
+
+**Navidrome en la versión desplegada**: el streaming solo funciona con un
+servidor Navidrome alcanzable públicamente por HTTPS. Defínelo como secrets del
+repo (`Settings → Secrets and variables → Actions`):
+`VITE_NAVIDROME_URL`, `VITE_NAVIDROME_USER`, `VITE_NAVIDROME_PASS`. Sin secrets,
+la web desplegada funciona igual pero el reproductor no se muestra — el Navidrome
+local (`localhost:4533`) solo sirve en tu máquina.
+
+## Streaming con Navidrome
+
+Los meses con `song` muestran un botón de reproducción que busca el tema en tu
+servidor Navidrome (API Subsonic) y lo reproduce en streaming. Copia
+`.env.example` a `.env.local` y rellena:
+
+```bash
+VITE_NAVIDROME_URL=http://localhost:4533
+VITE_NAVIDROME_USER=usuario
+VITE_NAVIDROME_PASS=contraseña
+```
+
+La contraseña viaja como `p=enc:hex` (Subsonic). Reinicia `npm run dev` tras
+editar `.env.local`. Si falta alguna variable, el reproductor no se muestra.
+El navegador exige un click para arrancar audio: no hay autoplay.
 
 ## Estructura
 
 - `src/App.jsx` — estado de la vista, routing por hash (`#inicio`, `#mes-N`), tick de 1 s.
 - `src/model.js` — parseo de `data.js`, cálculo de fechas y candados, tokens.
-- `src/components/` — SiteHeader, Hero, LiveCounter, NextUp, Countdown, Legend, ChapterIndex, MonthView, MonthMasthead, Letter, Gallery, Lightbox, SiteFooter.
+- `src/components/` — SiteHeader, Hero, LiveCounter, NextUp, Countdown, Legend, ChapterIndex, MonthView, MonthMasthead, SongPlayer, Letter, Gallery, Lightbox, SiteFooter.
+- `src/navidrome.js` — cliente Subsonic (búsqueda + stream) del tema de cada mes.
 - `reference/` — HTML original y fichas de diseño usadas para el port.

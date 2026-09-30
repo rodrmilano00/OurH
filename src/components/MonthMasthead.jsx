@@ -1,10 +1,14 @@
 import { pad } from "../utils/dates.js";
 import { IconLock } from "./icons.jsx";
+import SongPlayer from "./SongPlayer.jsx";
 
 export default function MonthMasthead({ month, locked }) {
   return (
     <header className="masthead">
-      <p className="masthead__num od-nowrap">{pad(month.number)}</p>
+      <div className="masthead__side">
+        <p className="masthead__num od-nowrap">{pad(month.number)}</p>
+        {!locked && <SongPlayer song={month.song} />}
+      </div>
       <div className="masthead__copy">
         <h2 className="masthead__title" id="card-title">
           {month.title}
@@ -32,7 +36,7 @@ export default function MonthMasthead({ month, locked }) {
                 <span className="masthead__sep" aria-hidden="true">
                   ·
                 </span>{" "}
-                <span>{month.place}</span>
+                <span className="masthead__place">{month.place}</span>
               </>
             )}
           </p>

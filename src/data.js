@@ -36,13 +36,14 @@ const SCRAPBOOK = {
     {
       number: 1,
       title: 'El mes en que empezó todo',
-      place: 'Primera cita',
+      place: '30 de septiembre',
       theme: 'sting',
       song: {
         title: 'Still Loving You',
         artist: 'Scorpions',
         album: 'Love at First Sting',
         year: 1984,
+        cover: 'assets/covers/love-at-first-sting.jpg',
       },
       letter: `Ese día no tenía ninguna importancia en el calendario y, sin embargo, lo he repasado tantas veces que ya me sé de memoria hasta la lluvia del camino de vuelta.
 
@@ -69,6 +70,16 @@ Aquí empieza el primer capítulo. Gracias por estar.`,
           src: 'assets/photos/photo-04.svg',
           alt: 'Marcador de la cuarta foto del mes 1, pendiente de sustituir por vuestra imagen.',
           caption: 'La despedida en la puerta',
+        },
+        {
+          src: 'assets/photos/photo-05.svg',
+          alt: 'Marcador de la quinta foto del mes 1, pendiente de sustituir por vuestra imagen.',
+          caption: 'El camino de vuelta',
+        },
+        {
+          src: 'assets/photos/photo-06.svg',
+          alt: 'Marcador de la sexta foto del mes 1, pendiente de sustituir por vuestra imagen.',
+          caption: 'La lluvia de aquel día',
         },
       ],
     },
