@@ -1835,6 +1835,14 @@ code {
   }
 }
 
+/* En táctil la foto se enciende al scrollear por ella (clase .photo--lit
+   que pone Gallery con IntersectionObserver sobre la franja central) */
+@media (hover: none) {
+  .month--sting .photo--lit .photo__img {
+    filter: none;
+  }
+}
+
 .month--sting .photo__cap {
   font-family: "Space Mono", var(--font-mono);
   font-size: var(--fs-micro);

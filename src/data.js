@@ -20,9 +20,9 @@
 const SCRAPBOOK = {
   meta: {
     title: 'Our Turntable',
-    subtitle: 'Mes a mes',
+    subtitle: 'Mes a mes lo vamos armando',
     lede:
-      'Mes a mes vamos armando un tocadiscos: cada capítulo es un disco, y cada disco lleva una canción que nos marcó.',
+      'Mes a mes lo vamos armando: cada capítulo es un disco, y cada disco lleva una canción que nos marcó.',
 
     // ↓↓↓  CAMBIA ESTA FECHA (AAAA-MM-DD). El contador y los candados se recalculan solos ↓↓↓
     startDate: '2026-08-30',
@@ -35,7 +35,7 @@ const SCRAPBOOK = {
   months: [
     {
       number: 1,
-      title: 'El mes en que empezó todo',
+      title: 'Un mes que no parecía el primero',
       place: '30 de septiembre',
       theme: 'sting',
       song: {
@@ -46,41 +46,45 @@ const SCRAPBOOK = {
         cover: 'assets/covers/love-at-first-sting.jpg',
         src: 'audio/still-loving-you.mp3',
       },
-      letter: `Ese día no tenía ninguna importancia en el calendario y, sin embargo, lo he repasado tantas veces que ya me sé de memoria hasta la lluvia del camino de vuelta.
+      letter: `La situación con esta canción me ha parecido muy particular. Still Loving You suele usarse para describir el capítulo final, cuando la historia de un amor se rompe y alguien ruega por volver al inicio. Pero para nosotros fue todo lo contrario: es nuestra canción de apertura.
 
-Hablamos medio rato para no meter prisa y, cuando te despidiste en la puerta, tardé tres minutos en arrancar. Ese café no era el plan de nadie y acabó siendo el principio de esta página.
+Si esta canción habla de cruzar paredes y de luchar hasta el final por conservar un amor, usarla como nuestro "kickstarter" significa que no estamos esperando a que las cosas se rompan para valorarnos. Decidimos empezar nuestra historia directamente en el nivel más alto de intensidad, sabiendo que si un día llegan las tormentas, la respuesta ya está escrita en nuestra canción desde el día uno: siempre volveremos a apostar por nosotros.
 
-Aquí empieza el primer capítulo. Gracias por estar.`,
+Tiene algo de nostálgica: me recuerda a cuando estaba nervioso al invitarte a salir y me emocionaba cada vez que contestabas. Me recuerda al chai que probé en el Josefina aquel día. A los primeros raites que me dabas a la escuela en fines de semana. Al aroma de tu carro. Al aroma de tu depa la primera vez que fui. A nuestro primer beso.
+
+Digo que este primer mes no se siente como el primero porque la química y la confianza que hemos construido nos han permitido ir más allá y cruzar las barreras del tiempo. Siento que llevo conociéndote toda una vida. Agradezco al cielo y a Dios porque estás en mi vida: te has convertido en una parte tan importante de mi rutina y de mí. Entre lágrimas mientras escribo esto, no me queda más que decirte gracias — por seguirme el juego, por escucharme, por reírte conmigo, por enseñarme lo que es el arte a través de ti y por ser lo mejor que me ha pasado.
+
+Esta canción refleja lo que somos y lo que estamos por ser: una pareja que transforma la melancolía en energía pura y que entra a esta historia con el compromiso total de luchar por lo nuestro.`,
       photos: [
         {
-          src: 'assets/photos/photo-01.svg',
-          alt: 'Marcador de la primera foto del mes 1, pendiente de sustituir por vuestra imagen.',
-          caption: 'La primera foto',
+          src: 'assets/photos/mes-01/foto-01.jpg',
+          alt: 'Foto del mes 1.',
+          caption: 'El pinguino tonto del Miniso',
         },
         {
-          src: 'assets/photos/photo-02.svg',
-          alt: 'Marcador de la segunda foto del mes 1, pendiente de sustituir por vuestra imagen.',
-          caption: 'Café y conversación',
+          src: 'assets/photos/mes-01/foto-02.jpg',
+          alt: 'Foto del mes 1.',
+          caption: 'Date en el SnackTime',
         },
         {
-          src: 'assets/photos/photo-03.svg',
-          alt: 'Marcador de la tercera foto del mes 1, pendiente de sustituir por vuestra imagen.',
-          caption: 'La vuelta a casa',
+          src: 'assets/photos/mes-01/foto-03.jpg',
+          alt: 'Foto del mes 1.',
+          caption: 'Tu Cumpleaños',
         },
         {
-          src: 'assets/photos/photo-04.svg',
-          alt: 'Marcador de la cuarta foto del mes 1, pendiente de sustituir por vuestra imagen.',
-          caption: 'La despedida en la puerta',
+          src: 'assets/photos/mes-01/foto-04.jpg',
+          alt: 'Foto del mes 1.',
+          caption: 'Siempre sera divertido hacerte flores',
         },
         {
-          src: 'assets/photos/photo-05.svg',
-          alt: 'Marcador de la quinta foto del mes 1, pendiente de sustituir por vuestra imagen.',
-          caption: 'El camino de vuelta',
+          src: 'assets/photos/mes-01/foto-05.jpg',
+          alt: 'Foto del mes 1.',
+          caption: 'Siempre tendras un fan que te tome fotos',
         },
         {
-          src: 'assets/photos/photo-06.svg',
-          alt: 'Marcador de la sexta foto del mes 1, pendiente de sustituir por vuestra imagen.',
-          caption: 'La lluvia de aquel día',
+          src: 'assets/photos/mes-01/foto-06.jpg',
+          alt: 'Foto del mes 1.',
+          caption: 'Gracias por robarte mi cel, asi sales mas en mi galeria',
         },
       ],
     },

@@ -1,9 +1,31 @@
+import { useEffect, useRef } from "react";
+
 export default function Gallery({ month, fill, onOpenPhoto }) {
   const count = month.photos.length;
+  const gridRef = useRef(null);
+
+  /* En táctil no hay hover: la foto se enciende solo cuando el usuario
+     la tiene entera en pantalla (threshold 1), no al asomar */
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid || !window.matchMedia("(hover: none)").matches) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) =>
+          entry.target.classList.toggle("photo--lit", entry.isIntersecting)
+        );
+      },
+      { rootMargin: "-2% 0px -2% 0px", threshold: 1 }
+    );
+
+    grid.querySelectorAll(".photo").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [month.index]);
 
   return (
     <section className="gallery" aria-label="Fotos de este mes">
-      <div className="gallery__grid">
+      <div className="gallery__grid" ref={gridRef}>
         {!count ? (
           <p className="gallery__empty">
             Este mes todavía no tiene fotos. Cuando lleguen, aparecerán aquí

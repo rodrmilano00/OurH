@@ -28,9 +28,8 @@ export default function Hero({
         </p>
 
         <p className="legend-line">
-          “Cada mes ponemos un disco nuevo: una canción que nos marcó, su carta
-          y sus fotos. La colección crece cuando le toca, igual que llegaste
-          tú.”
+          La música nos une, nos conecta con el presente y con el pasado. 
+          Sería muy buena idea si hacemos nuestro propio tocadiscos, ¿no?
         </p>
         <p className="lede" id="hero-lede">
           {META.lede || ""}
