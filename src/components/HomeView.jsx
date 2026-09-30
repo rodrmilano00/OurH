@@ -47,21 +47,24 @@ export default function HomeView({
           </div>
 
           <div className="wrap">
-            <NextUp next={nextLocked} pendingManual={pendingManual} now={now} />
+            <div className="shelf">
+              <NextUp
+                next={nextLocked}
+                pendingManual={pendingManual}
+                now={now}
+              />
+              <ChapterIndex
+                months={months}
+                openCount={openMonths.length}
+                view={view}
+                active={active}
+                onSelect={onSelectMonth}
+              />
+            </div>
           </div>
 
           <div className="wrap">
             <Legend />
-          </div>
-
-          <div className="wrap">
-            <ChapterIndex
-              months={months}
-              openCount={openMonths.length}
-              view={view}
-              active={active}
-              onSelect={onSelectMonth}
-            />
           </div>
         </>
       )}

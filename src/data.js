@@ -59,7 +59,7 @@ Esta canción refleja lo que somos y lo que estamos por ser: una pareja que tran
         {
           src: 'assets/photos/mes-01/foto-01.jpg',
           alt: 'Foto del mes 1.',
-          caption: 'El pinguino tonto del Miniso',
+          caption: 'El pingüino tonto del Miniso',
         },
         {
           src: 'assets/photos/mes-01/foto-02.jpg',
@@ -69,22 +69,22 @@ Esta canción refleja lo que somos y lo que estamos por ser: una pareja que tran
         {
           src: 'assets/photos/mes-01/foto-03.jpg',
           alt: 'Foto del mes 1.',
-          caption: 'Tu Cumpleaños',
+          caption: 'Tu cumpleaños',
         },
         {
           src: 'assets/photos/mes-01/foto-04.jpg',
           alt: 'Foto del mes 1.',
-          caption: 'Siempre sera divertido hacerte flores',
+          caption: 'Siempre será divertido hacerte flores',
         },
         {
           src: 'assets/photos/mes-01/foto-05.jpg',
           alt: 'Foto del mes 1.',
-          caption: 'Siempre tendras un fan que te tome fotos',
+          caption: 'Siempre tendrás un fan que te tome fotos',
         },
         {
           src: 'assets/photos/mes-01/foto-06.jpg',
           alt: 'Foto del mes 1.',
-          caption: 'Gracias por robarte mi cel, asi sales mas en mi galeria',
+          caption: 'Gracias por robarte mi cel, así sales más en mi galería',
         },
       ],
     },

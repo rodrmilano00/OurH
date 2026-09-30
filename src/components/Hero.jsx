@@ -38,7 +38,7 @@ export default function Hero({
         <div className="hero__cta">
           {lastOpen && (
             <a className="cta" href={`#mes-${lastOpen.number}`} id="cta-last">
-              <span>Poner el último disco</span>
+              <span>Abrir el último disco</span>
               <IconArrowRight />
             </a>
           )}

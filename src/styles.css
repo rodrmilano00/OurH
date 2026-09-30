@@ -274,6 +274,12 @@ code {
   padding-block: var(--sp-10) var(--sp-11);
 }
 
+/* La portada se aprieta un poco: menos aire arriba y abajo que la
+   vista de mes, que sí necesita el respiro editorial */
+.home {
+  padding-block: var(--sp-8) var(--sp-9);
+}
+
 .noscript {
   max-width: var(--wrap);
   margin: var(--sp-8) auto;
@@ -468,9 +474,9 @@ code {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  gap: var(--sp-9);
+  gap: var(--sp-8);
   align-items: end;
-  padding-block: var(--sp-9) var(--sp-10);
+  padding-block: var(--sp-7) var(--sp-8);
 }
 
 .hero__copy {
@@ -560,10 +566,13 @@ code {
   margin: 0;
 }
 
-/* Contador */
+/* Contador — panel enmarcado: tarjeta crema con sombra dura navy,
+   como un instrumento montado sobre la portada */
 .counter {
-  padding-top: var(--sp-5);
-  border-top: 1px solid var(--ink);
+  padding: var(--sp-6) var(--sp-6) var(--sp-5);
+  background-color: var(--paper-2);
+  border: 1px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--accent);
 }
 
 .counter__lead {
@@ -575,15 +584,16 @@ code {
 
 .counter__big {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 2rem + 6vw, 6rem);
+  font-size: clamp(4rem, 2.5rem + 7vw, 7rem);
   font-weight: 800;
   line-height: 0.95;
-  color: var(--ink);
+  color: var(--accent-ink);
 }
 
 .counter__unit {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-style: italic;
+  font-size: 1.45rem;
   color: var(--ink-2);
 }
 
@@ -591,7 +601,7 @@ code {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--sp-4);
-  margin-top: var(--sp-6);
+  margin-top: var(--sp-5);
   padding-top: var(--sp-4);
   border-top: 1px solid var(--line);
 }
@@ -680,42 +690,59 @@ code {
 /* -------------------------------------------------------------
    5. Leyenda e índice
    ------------------------------------------------------------- */
-.legend {
-  margin-top: var(--sp-10);
+/* La colección junta el anuncio del próximo disco con el índice
+   en un solo bloque: una fileteada, no dos secciones separadas */
+.shelf {
+  margin-top: var(--sp-7);
+  border-top: 1px solid var(--ink);
+  padding-top: var(--sp-5);
+}
+
+.shelf .nextup {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.shelf .index {
+  margin-top: var(--sp-6);
   border-top: 1px solid var(--line);
-  padding-top: var(--sp-6);
+}
+
+.legend {
+  margin-top: var(--sp-7);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-5);
 }
 
 .legend__list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--sp-7);
+  gap: var(--sp-6);
 }
 
 .legend__item {
   border-top: 1px solid var(--line);
-  padding-top: var(--sp-4);
+  padding-top: var(--sp-3);
 }
 
 .legend__num {
-  margin: 0 0 var(--sp-3);
+  margin: 0 0 var(--sp-2);
   color: var(--ink-4);
 }
 
 .legend__text {
   margin: 0;
   max-width: 32ch;
+  font-size: var(--fs-small);
   color: var(--ink-2);
 }
 
 .index {
-  margin-top: var(--sp-10);
-  border-top: 1px solid var(--ink);
-  padding-top: var(--sp-5);
+  padding-top: var(--sp-4);
 }
 
 .index__note {
-  margin: 0 0 var(--sp-6);
+  margin: 0 0 var(--sp-4);
   color: var(--ink-3);
 }
 
@@ -1506,6 +1533,10 @@ code {
 @media (max-width: 479px) {
   .view {
     padding-block: var(--sp-9) var(--sp-10);
+  }
+
+  .home {
+    padding-block: var(--sp-6) var(--sp-8);
   }
 
   .nextup__cd,
