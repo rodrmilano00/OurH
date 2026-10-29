@@ -7,7 +7,7 @@ export default function MonthMasthead({ month, locked }) {
     <header className="masthead">
       <div className="masthead__side">
         <p className="masthead__num od-nowrap">{pad(month.number)}</p>
-        {!locked && <SongPlayer song={month.song} />}
+        {!locked && <SongPlayer key={month.number} song={month.song} />}
       </div>
       <div className="masthead__copy">
         <h2 className="masthead__title" id="card-title">
