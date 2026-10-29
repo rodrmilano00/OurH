@@ -4,6 +4,7 @@ import MonthMasthead from "./MonthMasthead.jsx";
 import Letter from "./Letter.jsx";
 import Gallery from "./Gallery.jsx";
 import Countdown from "./Countdown.jsx";
+import Smoke from "./Smoke.jsx";
 import { IconArrowLeft, IconArrowRight } from "./icons.jsx";
 
 export default function MonthView({
@@ -55,6 +56,9 @@ export default function MonthView({
       aria-labelledby="card-title"
       hidden={hidden}
     >
+      {shownMonth?.theme === "bocanada" && (
+        <Smoke reduceMotion={reduceMotion} />
+      )}
       <div className="wrap">
         <article
           className={

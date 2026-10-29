@@ -91,27 +91,63 @@ Esta canción refleja lo que somos y lo que estamos por ser: una pareja que tran
 
     {
       number: 2,
-      locked: true,
-      title: 'El mes en que dejó de ser raro',
-      place: 'Rutina nueva',
-      letter: `Este mes descubrimos que juntos se construye una rutina muy concreta: un café a la misma hora, un mensaje que no significa nada y que los dos releemos igual, y una serie que vemos a la vez.
+      locked: false,
+      title: 'bocanada de aire',
+      place: '30 de octubre de 2026',
+      theme: 'bocanada',
+      song: {
+        title: 'Bocanada',
+        artist: 'Gustavo Cerati',
+        album: 'Bocanada',
+        year: 1999,
+        cover: 'assets/covers/bocanada.jpg',
+        src: 'audio/bocanada.mp3',
+      },
+      letter: `Curiosamente, esto lo escribo mientras sigo dando bocanadas de aire (gracias, bronquitis). La verdad, llevo todo este tiempo intentando aprenderme la letra y sigo sin poder. Sin embargo, sí me ha dado tiempo de analizarla y ver lo bonito que tiene, que es lo mismo que he sentido este mes.
 
-Empezamos a decir "el mes que viene" sin que sonara a despedida. Y eso, para mí, fue la manera más bonita de decir que esto iba en serio.`,
+Primero, se habla de que el humo es algo que ocupa el espacio cuando las palabras ya no hacen falta. En estos dos meses, algo de lo más bonito no ha sido solo todo lo que nos hemos dicho, sino lo cómodo y mágico que se siente quedarnos en silencio, mirándonos y entendiendo lo que sentimos sin necesidad de decirlo.
+
+De igual forma, vayamos con la propia definición de la palabra: una bocanada de aire es un respiro profundo que se disfruta despacio. Lo que me han enseñado estos dos meses es también a ver las oportunidades que nos da la vida para detener el tiempo y poder "respirar" nuestra historia paso a paso, incluso repasando nuestros errores y fallas, pero sobre todo disfrutando del aroma de todo lo que estamos construyendo.
+
+Aunque la haya utilizado como coartada para copiarte las notas en Instagram, genuinamente se ha convertido en una de mis canciones favoritas. Esto gracias al ambiente que crea, donde el tiempo parece detenerse suavemente, y justo eso es lo que siento a tu lado. Estos 60 días nos han permitido crear nuestro propio clima, un lugar donde el mundo exterior deja de importar y solo estamos nosotros dos, y estoy infinitamente agradecido por ello.
+
+No me habré aprendido la letra, pero lo que sí me aprendí de memoria desde el día uno es la forma en la que me miras, cómo me haces reír y lo bien que se siente estar a tu lado. A lo mejor nunca me voy a terminar de aprender la canción, o quién sabe, pero gracias a ti he aprendido cosas mucho más importantes: a disfrutar del silencio contigo, a tomarme la vida con más calma y a valorar cada instante a tu lado.
+
+No necesitamos hacer ruido ni correr para destacar: nos basta con coincidir, respirar el mismo aire y saber que estar a tu lado es la mejor bocanada de aire que podré tomar en toda mi vida.
+
+Te amo.
+
+PD. goated mes respect respect`,
       photos: [
         {
-          src: 'assets/photos/photo-05.svg',
-          alt: 'Marcador de la primera foto del mes 2, pendiente de sustituir por vuestra imagen.',
-          caption: 'La misma hora, siempre',
+          src: 'assets/photos/mes-02/foto-01.jpg',
+          alt: 'Foto del mes 2.',
+          caption: 'why is bro happy abt',
         },
         {
-          src: 'assets/photos/photo-06.svg',
-          alt: 'Marcador de la segunda foto del mes 2, pendiente de sustituir por vuestra imagen.',
-          caption: 'La mesa de siempre',
+          src: 'assets/photos/mes-02/foto-02.jpg',
+          alt: 'Foto del mes 2.',
+          caption: 'siempre me encantará lo bien que te ves presentando',
         },
         {
-          src: 'assets/photos/photo-02.svg',
-          alt: 'Marcador de la tercera foto del mes 2, pendiente de sustituir por vuestra imagen.',
-          caption: 'Paseo sin destino',
+          src: 'assets/photos/mes-02/foto-03.jpg',
+          alt: 'Foto del mes 2.',
+          caption: 'me searching music while dressed as marceline',
+        },
+        {
+          src: 'assets/photos/mes-02/foto-04.jpeg',
+          alt: 'Foto del mes 2.',
+          caption: 'cara de arcilla aka la mejor pelicula del año',
+        },
+        {
+          src: 'assets/photos/mes-02/foto-05.jpg',
+          alt: 'Foto del mes 2.',
+          caption: 'thrifting y asi',
+        },
+        {
+          src: 'assets/photos/mes-02/foto-06.jpg',
+          alt: 'Foto del mes 2.',
+          caption: 'el soto japones',
         },
       ],
     },
