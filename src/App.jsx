@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { DATA_OK, LOCALE, MONTHS, START, fill } from "./model.js";
+import { DATA_OK, GIFT, LOCALE, MONTHS, START, fill } from "./model.js";
 import {
   longDate,
   monthsBetween,
@@ -13,6 +13,7 @@ import HomeView from "./components/HomeView.jsx";
 import MonthView from "./components/MonthView.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
 import Lightbox from "./components/Lightbox.jsx";
+import GiftView from "./components/GiftView.jsx";
 
 function parseRoute() {
   const match = /^#mes-(\d+)$/.exec(window.location.hash || "");
@@ -65,7 +66,10 @@ function Scrapbook() {
   const route = useCallback(
     (scroll) => {
       const index = parseRoute();
-      if (index !== null) {
+      if (GIFT && window.location.hash === "#para-ti") {
+        setView("gift");
+        setAnnounce(GIFT.title || "Un detalle para ti");
+      } else if (index !== null) {
         const month = MONTHS[index];
         setView("month");
         setActive(index);
@@ -195,6 +199,7 @@ function Scrapbook() {
           onSelectMonth={goMonth}
           onOpenPhoto={openBox}
         />
+        {GIFT && <GiftView hidden={view !== "gift"} />}
       </main>
 
       <SiteFooter startLabel={startLabel} />

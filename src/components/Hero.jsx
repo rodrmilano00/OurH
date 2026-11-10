@@ -1,6 +1,22 @@
-import { META } from "../model.js";
+import { GIFT, META } from "../model.js";
 import { IconArrowRight } from "./icons.jsx";
 import LiveCounter from "./LiveCounter.jsx";
+
+function FlowerMark() {
+  return (
+    <svg className="cta__flower" viewBox="-12 -12 24 24" aria-hidden="true">
+      {[0, 60, 120, 180, 240, 300].map((a) => (
+        <path
+          key={a}
+          d="M0 0 C -3.2 -3 -3 -8.5 0 -11 C 3 -8.5 3.2 -3 0 0 Z"
+          fill="currentColor"
+          transform={`rotate(${a})`}
+        />
+      ))}
+      <circle r="2.2" fill="#f3cf6a" />
+    </svg>
+  );
+}
 
 export default function Hero({
   startLabel,
@@ -36,8 +52,18 @@ export default function Hero({
         </p>
 
         <div className="hero__cta">
+          {GIFT && (
+            <a className="cta cta--gift" href="#para-ti" id="cta-gift">
+              <FlowerMark />
+              <span>{GIFT.cta || "Hay algo para ti"}</span>
+            </a>
+          )}
           {lastOpen && (
-            <a className="cta" href={`#mes-${lastOpen.number}`} id="cta-last">
+            <a
+              className={"cta" + (GIFT ? " cta--quiet" : "")}
+              href={`#mes-${lastOpen.number}`}
+              id="cta-last"
+            >
               <span>Abrir el último disco</span>
               <IconArrowRight />
             </a>
