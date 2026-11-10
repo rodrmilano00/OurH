@@ -32,6 +32,18 @@ const SCRAPBOOK = {
     dateLocale: 'es-ES',
   },
 
+  // Pestaña especial (#para-ti): el ramo de lirios y orquídeas.
+  // Fuera de la colección de discos; el botón principal del inicio lleva aquí.
+  gift: {
+    cta: 'Hay algo para ti',
+    kicker: 'No necesariamente tienen que ser físicas',
+    title: 'Para tí',
+    message: `Cada cosa que haces me hace amarte más, cada cosa que haces me hace sentir más afortunado, 
+    cada cosa que haces me hace sentir más orgulloso que nunca y cada cosa que haces me hace sentir más enamorado que nunca.
+    Muchas felicidades, mi amor.`,
+    signature: '',
+  },
+
   months: [
     {
       number: 1,

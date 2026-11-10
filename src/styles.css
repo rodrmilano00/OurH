@@ -2690,3 +2690,403 @@ body[data-theme="bocanada"] .foot__hint {
   position: relative;
   z-index: 1;
 }
+
+/* -------------------------------------------------------------
+   Pestaña especial "Para ti" — ramo de lirios y orquídeas
+   ------------------------------------------------------------- */
+
+/* CTA principal del inicio: rosa lirio con sombra dura de tinta,
+   misma familia que el panel del contador */
+.cta--gift {
+  --lily: #b3245a;
+  padding: var(--sp-4) var(--sp-6);
+  background-color: var(--lily);
+  color: #fff7f9;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: background-color var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+
+.cta--gift .cta__flower {
+  width: 20px;
+  height: 20px;
+  color: #ffd9e5;
+}
+
+.cta--gift:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta--gift:hover {
+    background-color: #9c1d4d;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cta--gift .cta__flower {
+    animation: cta-flower 14s linear infinite;
+  }
+}
+
+@keyframes cta-flower {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* El acceso al último disco pasa a secundario */
+.cta--quiet {
+  background-color: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+
+@media (hover: hover) {
+  .cta--quiet:hover {
+    background-color: var(--paper-3);
+  }
+}
+
+/* Vista */
+.gift__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--sp-9);
+  align-items: center;
+}
+
+.gift__art {
+  margin: 0;
+  padding: var(--sp-6) var(--sp-6) var(--sp-4);
+  background-color: #f5e8e5;
+  border: 1px solid var(--ink);
+  box-shadow: 6px 6px 0 #b3245a;
+}
+
+/* El ramo nunca pasa del alto de la pantalla: con zoom o en
+   horizontal se encoge en vez de obligar a hacer scroll para verlo */
+.bouquet {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  max-height: min(72svh, 640px);
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.gift__label {
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: 1px solid rgba(38, 34, 30, 0.18);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+.gift__kicker {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b3245a;
+}
+
+.gift__title {
+  margin: 0;
+  overflow-wrap: break-word;
+  font-family: var(--font-serif);
+  font-size: var(--fs-serif);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.05;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.gift__message {
+  margin-top: var(--sp-5);
+  max-width: 44ch;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.gift__message p + p {
+  margin-top: var(--sp-4);
+}
+
+.gift__sign {
+  margin-top: var(--sp-5);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--ink-2);
+}
+
+.gift__back {
+  margin-top: var(--sp-7);
+}
+
+.bq-fall {
+  opacity: 0;
+}
+
+/* Tablet y laptops chicas: dos columnas más juntas */
+@media (max-width: 1023px) {
+  .gift__grid {
+    gap: var(--sp-7);
+  }
+
+  .gift__message {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .gift.view {
+    padding-block: var(--sp-6) var(--sp-9);
+  }
+
+  .gift__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--sp-6);
+  }
+
+  .gift__art {
+    padding: var(--sp-5) var(--sp-4) var(--sp-3);
+    box-shadow: 4px 4px 0 #b3245a;
+  }
+
+  .bouquet {
+    max-width: 340px;
+    max-height: 62svh;
+  }
+
+  .gift__back {
+    margin-top: var(--sp-6);
+  }
+
+  .gift__message {
+    font-size: 1.15rem;
+  }
+
+  .hero__cta .cta--gift {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Celular en horizontal: ramo y dedicatoria lado a lado,
+   el ramo a la altura de la pantalla */
+@media (max-height: 520px) and (orientation: landscape) {
+  .gift.view {
+    padding-block: var(--sp-5) var(--sp-7);
+  }
+
+  .gift__grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    gap: var(--sp-6);
+  }
+
+  .gift__art {
+    padding: var(--sp-3) var(--sp-3) var(--sp-2);
+  }
+
+  .bouquet {
+    max-height: 70svh;
+  }
+
+  .gift__label {
+    margin-top: var(--sp-2);
+    padding-top: var(--sp-2);
+  }
+}
+
+/* Florecer: tallos que se trazan, hojas que se abren desde el nudo,
+   botones y flores que despliegan sus pétalos en cascada; después,
+   un vaivén lento y algún pétalo que se suelta. Solo con movimiento. */
+@media (prefers-reduced-motion: no-preference) {
+  .bq-stem {
+    stroke-dasharray: 1;
+    animation: bq-draw 1100ms cubic-bezier(0.23, 1, 0.32, 1) var(--d, 0ms) both;
+  }
+
+  .bq-leaf {
+    transform-origin: 210px 440px;
+    animation: bq-leaf 1000ms cubic-bezier(0.23, 1, 0.32, 1) var(--d, 0ms) both;
+  }
+
+  .bq-bud,
+  .bq-bloom {
+    animation: bq-bloom 1000ms cubic-bezier(0.23, 1, 0.32, 1) var(--d, 0ms) both;
+  }
+
+  .bq-bloom--orchid {
+    animation-name: bq-bloom-orchid;
+  }
+
+  .bq-petal {
+    animation: bq-petal 900ms cubic-bezier(0.23, 1, 0.32, 1) var(--d, 0ms) both;
+  }
+
+  .bq-sway {
+    transform-origin: 210px 540px;
+    animation: bq-sway 9s ease-in-out 2.8s infinite alternate;
+  }
+
+  .bq-spray--l {
+    transform-origin: 205px 440px;
+    animation: bq-spray 6.5s ease-in-out 2.6s infinite alternate;
+  }
+
+  .bq-spray--r {
+    transform-origin: 215px 440px;
+    animation: bq-spray 7.5s ease-in-out 3.1s infinite alternate-reverse;
+  }
+
+  .bq-fall {
+    opacity: 0;
+    animation: bq-fall 12s ease-in-out var(--d, 0ms) infinite;
+  }
+
+  .bq-fall--alt {
+    animation-name: bq-fall-alt;
+    animation-duration: 14s;
+  }
+
+  .gift__copy {
+    animation: bq-copy 700ms cubic-bezier(0.23, 1, 0.32, 1) 500ms both;
+  }
+}
+
+@keyframes bq-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes bq-leaf {
+  from {
+    opacity: 0;
+    transform: scale(0.55) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bq-bloom {
+  from {
+    opacity: 0;
+    transform: scale(0.4) rotate(-22deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bq-bloom-orchid {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(14deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bq-petal {
+  from {
+    transform: scale(0.3, 0.15);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes bq-sway {
+  from {
+    transform: rotate(-1.1deg);
+  }
+  to {
+    transform: rotate(1.1deg);
+  }
+}
+
+@keyframes bq-spray {
+  from {
+    transform: rotate(-1.6deg);
+  }
+  to {
+    transform: rotate(1.4deg);
+  }
+}
+
+@keyframes bq-fall {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  8% {
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate(26px, 150px) rotate(140deg);
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-14px, 300px) rotate(250deg);
+  }
+}
+
+@keyframes bq-fall-alt {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  8% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-30px, 140px) rotate(-120deg);
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(18px, 290px) rotate(-230deg);
+  }
+}
+
+@keyframes bq-copy {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

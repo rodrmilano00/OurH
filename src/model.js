@@ -11,6 +11,7 @@ export const DATA_OK = Boolean(
 );
 
 export const META = SCRAPBOOK?.meta || {};
+export const GIFT = SCRAPBOOK?.gift || null;
 export const LOCALE = META.dateLocale || "es-ES";
 export const START = parseDate(META.startDate);
 
